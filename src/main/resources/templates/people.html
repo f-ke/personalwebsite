@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>people</title>
+    <link th:href="@{/asserts/css/bootstrap.min.css}" href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/nav.css}" href="asserts/css/nav.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/people.css}" href="asserts/css/nav.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="common/bar::#topbar"></div>
+<div class="container-fluid">
+    <div class="row">
+            <div th:replace="common/bar::#sidebar(activeUri = 'mypeople')"></div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="row">
+                <div class="card">
+                    <a href="https://github.com/reactjs" target="_blank">
+                        <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+                    </a>
+                    <p class="card-text">reactjs</p>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/reactjs" target="_blank">
+                        <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+                    </a>
+                    <p class="card-text">reactjs</p>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/reactjs" target="_blank">
+                        <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+                    </a>
+                    <p class="card-text">reactjs</p>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/reactjs" target="_blank">
+                        <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+                    </a>
+                    <p class="card-text">reactjs</p>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/reactjs" target="_blank">
+                        <img src="https://avatars.githubusercontent.com/u/6412038?v=3" style='width: 100px'/>
+                    </a>
+                    <p class="card-text">reactjs</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
