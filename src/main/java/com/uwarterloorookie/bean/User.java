@@ -3,9 +3,11 @@ package com.uwarterloorookie.bean;
 public class User {
     private int id;
     private String userName;
+    private String vocation;
     private String passWord;
     private String email;
     private int gender;
+    private String religion;
 
     public String getEmail() {
         return email;
@@ -37,6 +39,22 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getVocation() {
+        return vocation;
+    }
+
+    public void setVocation(String vocation) {
+        this.vocation = vocation;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
     }
 
     public String getPassWord() {
