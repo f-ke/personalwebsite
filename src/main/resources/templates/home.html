@@ -69,7 +69,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53" width="40px"><path fill="#e7eced" d="M 18.613 41.552 l -7.907 4.313 a 7.106 7.106 0 0 0 -1.269 0.903 A 26.377 26.377 0 0 0 26.5 53 c 6.454 0 12.367 -2.31 16.964 -6.144 a 7.015 7.015 0 0 0 -1.394 -0.934 l -8.467 -4.233 a 3.229 3.229 0 0 1 -1.785 -2.888 v -3.322 c 0.238 -0.271 0.51 -0.619 0.801 -1.03 a 19.482 19.482 0 0 0 2.632 -5.304 c 1.086 -0.335 1.886 -1.338 1.886 -2.53 v -3.546 c 0 -0.78 -0.347 -1.477 -0.886 -1.965 v -5.126 s 1.053 -7.977 -9.75 -7.977 s -9.75 7.977 -9.75 7.977 v 5.126 a 2.644 2.644 0 0 0 -0.886 1.965 v 3.546 c 0 0.934 0.491 1.756 1.226 2.231 c 0.886 3.857 3.206 6.633 3.206 6.633 v 3.24 a 3.232 3.232 0 0 1 -1.684 2.833 Z" /><path fill="#757575" d="M 26.953 0.004 C 12.32 -0.246 0.254 11.414 0.004 26.047 C -0.138 34.344 3.56 41.801 9.448 46.76 a 7.041 7.041 0 0 1 1.257 -0.894 l 7.907 -4.313 a 3.23 3.23 0 0 0 1.683 -2.835 v -3.24 s -2.321 -2.776 -3.206 -6.633 a 2.66 2.66 0 0 1 -1.226 -2.231 v -3.546 c 0 -0.78 0.347 -1.477 0.886 -1.965 v -5.126 S 15.696 8 26.499 8 s 9.75 7.977 9.75 7.977 v 5.126 c 0.54 0.488 0.886 1.185 0.886 1.965 v 3.546 c 0 1.192 -0.8 2.195 -1.886 2.53 a 19.482 19.482 0 0 1 -2.632 5.304 c -0.291 0.411 -0.563 0.759 -0.801 1.03 V 38.8 c 0 1.223 0.691 2.342 1.785 2.888 l 8.467 4.233 a 7.05 7.05 0 0 1 1.39 0.932 c 5.71 -4.762 9.399 -11.882 9.536 -19.9 C 53.246 12.32 41.587 0.254 26.953 0.004 Z" />
                             </svg>
                         </div>
-                        <textarea name="content" class="sc-gHboQg eqKheY" placeholder="Add a post" type="textarea" th:text="dd" ></textarea>
+                        <textarea name="content" class="sc-gHboQg eqKheY" placeholder="Add a post" type="textarea"  ></textarea>
                     </div>
                     <div class="sc-emmjRN boEqap">
                         <input name="fileName" class="sc-krvtoX iBOgSY" id="post-image" type="file" accept="image/x-png,image/jpeg">
@@ -81,9 +81,9 @@
                 </label>
                         <div class="sc-cpmLhU iCYcLl">
                             <button class="sc-ifAKCX cLNZRm" type="submit">share</button>
-i
+
                             <select  class="sc-ifAKCX lmRuQB"  name ="topicid">
-                                <option th:value="${mytopic.id}" th:each="mytopic:${mytopics}" th:text="${mytopic.topictext}"   th:selected="${mytopic != null}?${mytopic.id == 1}">1</option>
+                                <option th:value="${mytopic.id}" th:each="mytopic:${mytopics}" th:text="${mytopic.topictext}"  >1</option>
                             </select>
 
                         </div>
@@ -102,7 +102,7 @@ i
 
                 </div>
                 </a>
-                    <a type="button" class="sc-ifAKCX kLZvwM" style="color:grey">
+                    <a type="button" class="sc-ifAKCX kLZvwM" style="color:grey" th:href="@{/view/}+${user.id}+@{/}+${Shipin.id}">
                     <div class="" style="margin-right:10px"><span class="sc-iujRgT eHHHfk">viewdetails</span>
                         <div class="sc-bMVAic ddJtUJ">4min</div>
 
@@ -129,52 +129,14 @@ i
                                 <b>Like</b>
                             </button>
                             <button class="sc-ifAKCX hjAPgA">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58" width="18"><path d="M29 1.5c-16.016 0-29 11.641-29 26 0 5.292 1.768 10.211 4.796 14.318C4.398 46.563 3.254 53.246 0 56.5c0 0 9.943-1.395 16.677-5.462l.022.009c2.764-1.801 5.532-3.656 6.105-4.126.3-.421.879-.548 1.33-.277.296.178.483.503.489.848.01.622-.005.784-5.585 4.421A31.914 31.914 0 0 0 29 53.5c16.016 0 29-11.641 29-26s-12.984-26-29-26z" fill="rgba(0, 0, 0, 0.54)"></path></svg> <div class="sc-htpNat bNGYSx"></div> <b>Comment</b></button></div></div><div class="sc-htpNat fbyJIU"><div class="sc-eLExRp fFlsNQ"></div><form class="sc-gxMtzJ gQSFUv">
-                    <textarea placeholder="Add a comment..." class="sc-bZQynM eKXLzY"></textarea>
-<!--                    post comment button-->
-                    <button type="submit" color="grey[500]" class="sc-ifAKCX ldFJSF" disabled="">Post</button>
-                </form>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58" width="18"><path d="M29 1.5c-16.016 0-29 11.641-29 26 0 5.292 1.768 10.211 4.796 14.318C4.398 46.563 3.254 53.246 0 56.5c0 0 9.943-1.395 16.677-5.462l.022.009c2.764-1.801 5.532-3.656 6.105-4.126.3-.421.879-.548 1.33-.277.296.178.483.503.489.848.01.622-.005.784-5.585 4.421A31.914 31.914 0 0 0 29 53.5c16.016 0 29-11.641 29-26s-12.984-26-29-26z" fill="rgba(0, 0, 0, 0.54)"></path></svg> <div class="sc-htpNat bNGYSx"></div> <b>Comment</b></button></div></div>
+
+
                 </div>
-                    <div class="sc-eLExRp fFlsNQ"></div>
-                    <div class="sc-bXGyLb eeKnRV"><div class="sc-kfGgVZ hcILRE">
-                        <a class="sc-gqjmRU jjDpdZ" href="/fanfan"><div class="sc-jAaTju kZLkxs">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
-                                <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path>
-                                <path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575">
 
-                            </path>
-                            </svg>
-                        </div>
-                        </a>
-                        <div class="sc-kIPQKe cQhNcD"><button class="sc-kPVwWT grijEi">
-                            <svg width="10" fill="rgba(0, 0, 0, 0.54)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971">
-                                <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z">
 
-                                </path>
-                            </svg>
-                        </button>
-                            <div class="sc-htpNat BsZnH"></div>
-                            <div class="sc-htpNat eZMjmI"><a class="sc-gqjmRU jjDpdZ" href="/fanfan">
-                                <div class="sc-esjQYD cUSCEe">fanfan</div></a>
-                            </div>rrrr</div>
-                    </div>
-                        <div class="sc-kfGgVZ hcILRE">
-                            <a class="sc-gqjmRU jjDpdZ" href="/fanfan">
-                                <div class="sc-jAaTju kZLkxs"><svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
-                                    <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path>
-                                    <path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575"></path>
-                                </svg>
-                                </div>
-                            </a>
-                            <div class="sc-kIPQKe cQhNcD">
-                            <button class="sc-kPVwWT grijEi">
-                                <svg width="10" fill="rgba(0, 0, 0, 0.54)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971">
-                                    <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"></path></svg></button><div class="sc-htpNat BsZnH"></div><div class="sc-htpNat eZMjmI"><a class="sc-gqjmRU jjDpdZ" href="/fanfan">
-                <div class="sc-esjQYD cUSCEe">fanfan</div>
-            </a>
-            </div>dd</div>
-            </div>
-            </div>
+
+
             </div>
             </div>
         </div>

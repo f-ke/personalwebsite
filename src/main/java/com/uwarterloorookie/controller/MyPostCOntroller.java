@@ -111,12 +111,14 @@ public class MyPostCOntroller {
 
     //查询
 
-    @GetMapping("/view/{id}")
-    public String viewfile(@PathVariable("id") int id, Model model){
+    @GetMapping("/view/{userid}/{id}")
+    public String viewfile(@PathVariable("id") int id, @PathVariable("userid") int userid, Model model){
+        User user1 = userMapper.gerUserById(userid);
+        model.addAttribute("user", user1);
         shiPinDao.updateviewbyid(id);
         Shipin shipin = shiPinDao.getSipinbyid(id);
         model.addAttribute("Shipin", shipin);
-        return "/imagetest/viewfile";
+        return "/viewpost";
     }
 
 }

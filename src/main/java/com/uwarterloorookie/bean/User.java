@@ -8,7 +8,7 @@ public class User {
     private String email;
     private int gender;
     private String religion;
-<<<<<<< HEAD
+
     private int birthyear;
     private int birthmonth;
     private int birthday;
@@ -36,8 +36,7 @@ public class User {
     public void setBirthday(int birthday) {
         this.birthday = birthday;
     }
-=======
->>>>>>> ddd8520a0320c930d3fff2c3028d51f3de097ab1
+
 
     public String getEmail() {
         return email;
