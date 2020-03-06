@@ -24,6 +24,7 @@
                 <input type="hidden" name = "id" th:if="${user != null}" th:value="${user.id}"/>
                 <div class="form-group col-md-3">
                     <label>Name</label>
+<<<<<<< HEAD
                     <input name = "userName" type="text" class="form-control" th:placeholder="${user.userName}" th:value="${user!=null}?${user.userName}">
                 </div>
                 <div class="form-group col-md-3">
@@ -33,6 +34,13 @@
                 <div class="form-group  col-md-3">
                     <label>Vocation</label>
                     <input name="vocation" type="text" class="form-control"th:placeholder="${user.vocation}" placeholder="student" th:value="${user.vocation!=null}?${user.vocation}">
+=======
+                    <input name = "userName" type="text" class="form-control" placeholder="zhangsan" th:value="${user!=null}?${user.userName}">
+                </div>
+                <div class="form-group  col-md-3">
+                    <label>Vocation</label>
+                    <input name="vocation" type="text" class="form-control" placeholder="student" th:value="${user.vocation!=null}?${user.vocation}">
+>>>>>>> ddd8520a0320c930d3fff2c3028d51f3de097ab1
                 </div>
                 <div class="form-group  col-md-3">
                     <label>Email</label>
@@ -42,8 +50,32 @@
                     <label>Religion</label>
                     <input name="religion" type="text" class="form-control" placeholder="none" th:placeholder="${user.religion}" th:value="${user.religion!=null}?${user.religion}">
                 </div>
+<<<<<<< HEAD
 
                 <div class="form-group" style = "margin-left:13px">
+=======
+                <div class="form-group  col-md-3">
+                    <label>Religion</label>
+                    <input name="religion" type="text" class="form-control" placeholder="none" th:value="${user.religion!=null}?${user.religion}">
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="year">Year</label>
+                        <input type="text" class="form-control" id="year">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="month">Month</label>
+                        <input type="text" class="form-control" id="month">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="day">Day</label>
+                        <input type="text" class="form-control" id="day">
+                    </div>
+                </div>
+                <div class="form-group">
+>>>>>>> ddd8520a0320c930d3fff2c3028d51f3de097ab1
                     <label>Gender</label><br/>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="gender" value="1" th:checked="${user.gender!=null}?${user.gender == 1}">
