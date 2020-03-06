@@ -31,5 +31,7 @@ public interface ShiPinDao {
     public void updateuseridtByurl(int userid, String url);
     @Update("update shipins set username = #{username} where userid = #{userid}")
     public void updateusernametByuserid(String username, int userid);
+    @Update("update shipins set commentnums = #{commentnums} where id = #{id}")
+    public void updateCommentsById(int commentnums, int id);
 
 }

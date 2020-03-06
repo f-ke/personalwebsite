@@ -8,6 +8,36 @@ public class Shipin {
     private String topictext;
     private int userid;
     private String username;
+    private int view;
+    private int commentnums;
+
+    public int getCommentnums() {
+        return commentnums;
+    }
+
+    public void setCommentnums(int commentnums) {
+        this.commentnums = commentnums;
+    }
+
+    private int likenum;
+
+
+
+    public int getLikenum() {
+        return likenum;
+    }
+
+    public void setLikenum(int likenum) {
+        this.likenum = likenum;
+    }
+
+    public int getView() {
+        return view;
+    }
+
+    public void setView(int view) {
+        this.view = view;
+    }
 
     public String getUsername() {
         return username;

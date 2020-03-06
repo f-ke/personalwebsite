@@ -1,9 +1,11 @@
 package com.uwarterloorookie.controller;
 
 
+import com.uwarterloorookie.bean.Comment;
 import com.uwarterloorookie.bean.Shipin;
 import com.uwarterloorookie.bean.User;
 import com.uwarterloorookie.bean.Usertopics;
+import com.uwarterloorookie.mapper.CommentsMapper;
 import com.uwarterloorookie.mapper.ShiPinDao;
 import com.uwarterloorookie.mapper.UserMapper;
 import com.uwarterloorookie.mapper.UsertopicMapper;
@@ -36,6 +38,8 @@ public class MyPostCOntroller {
 
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    CommentsMapper commentsMapper;
 
     private String url;
 
@@ -98,6 +102,7 @@ public class MyPostCOntroller {
         String topic = usertopicMapper.Gettextbytopicid(topicid);
         shiPinDao.updatetextByurl(url,topic);
         shiPinDao.updateuseridtByurl(userid,url);
+
         shiPinDao.updateusernametByuserid(username,userid);
         List<Shipin> shipins=shiPinService.selectShipin();
         model.addAttribute("Shipins", shipins);
@@ -118,6 +123,10 @@ public class MyPostCOntroller {
         shiPinDao.updateviewbyid(id);
         Shipin shipin = shiPinDao.getSipinbyid(id);
         model.addAttribute("Shipin", shipin);
+        List<Comment> commentsList = commentsMapper.selectCommentsbyShipinId(id);
+        model.addAttribute("postcomments",commentsList);
+
+
         return "/viewpost";
     }
 
