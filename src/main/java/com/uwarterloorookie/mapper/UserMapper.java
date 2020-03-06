@@ -2,6 +2,7 @@ package com.uwarterloorookie.mapper;
 
 import com.uwarterloorookie.bean.User;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface UserMapper {
 
@@ -9,5 +10,12 @@ public interface UserMapper {
     public User getUser(String passWord, String userName);
     @Select("SELECT * FROM users where id = #{id}")
     public User gerUserById(int id);
+    @Select("SELECT userName FROM users where id = #{id}")
+    public String getUsernameById(int id);
+    @Update("update users set userName = #{userName} , passWord = #{passWord}, " +
+            " vocation = #{vocation} , email = #{email} , birthyear=#{birthyear} , birthmonth=#{birthmonth}" +
+            ", birthday = #{birthday} , gender = #{gender},religion = #{religion} where id = #{id}")
+    public void saveUserbyId(int id, String userName, String passWord, String vocation, String email, String religion, int gender,
+                         int birthyear, int birthmonth, int birthday);
 
 }

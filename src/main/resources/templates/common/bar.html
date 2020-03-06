@@ -8,7 +8,7 @@
 <body>
 <!--topbar-->
 <nav class="navbar navbar-light bg-light" id = "topbar">
-    <a class="navbar-brand">[[${session.loginuser}]]</a>
+    <a class="navbar-brand">[[${user.userName}]]</a>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -19,7 +19,7 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" th:href="@{/myhome/}  + ${user.id}" th:class="${activeUri == 'main.html'?'nav-link active' : 'nav-link'}">
+                <a class="nav-link active" th:href="@{/myhome/} + ${user.id} " th:class="${activeUri == 'main.html'?'nav-link active' : 'nav-link'}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>

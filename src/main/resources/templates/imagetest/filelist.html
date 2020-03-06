@@ -9,8 +9,12 @@
 <div>
     <ul>
         <li th:each="Shipin:${Shipins}">
+            <a th:href="@{/view/} + ${Shipin.id}">view this file</a>
             <p>ID:<span th:text="${Shipin.id}"></span></p>
             <p>视频url======<span th:text="${Shipin.url}"></span></p>
+            <img  th:src="${Shipin.url}" width="50px" height="100px"/>
+            <textarea th:text="${Shipin.content}"></textarea>
+            <p>hahhaha</p>
         </li>
     </ul>
 </div>

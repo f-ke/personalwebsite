@@ -17,11 +17,11 @@ public class ShiPinService {
     private ShiPinDao shiPinDao;
 
     //插入
-    public int insertUrl(String name, String lujing, String url){
+    public int insertUrl(String name, String lujing, String url, String content,int topicid){
         System.out.print("开始插入=name=="+name+"\n");
         System.out.print("开始插入=lujing=="+lujing+"\n");
         System.out.print("开始插入=url=="+url+"\n");
-        int jieguo=shiPinDao.insertUrl(name,lujing,url);
+        int jieguo=shiPinDao.insertUrl(name,lujing,url,content,topicid);
         System.out.print("插入结果==="+jieguo+"\n");
         return jieguo;
     }
