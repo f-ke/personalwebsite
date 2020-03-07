@@ -4,6 +4,15 @@ public class Topic {
     int topicid;
     String topicname;
     String topicimage;
+    Usertopics usertopics;
+
+    public Usertopics getUsertopics() {
+        return usertopics;
+    }
+
+    public void setUsertopics(Usertopics usertopics) {
+        this.usertopics = usertopics;
+    }
 
     public int getTopicid() {
         return topicid;

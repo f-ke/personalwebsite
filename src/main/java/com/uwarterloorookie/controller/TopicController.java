@@ -33,6 +33,12 @@ public class TopicController {
         userid = user1.getId();
         model.addAttribute("user", user1);
         List<Topic> getalltopics = topicMapper.getalltopics();
+        for (int i = 0; i < getalltopics.size();i++){
+            int tid = getalltopics.get(i).getTopicid();
+            Usertopics usertopics1 = usertopicMapper.getUsertopicsbysuperkey(tid, userid);
+            getalltopics.get(i).setUsertopics(usertopics1);
+        }//usertopic update usertopics
+
         model.addAttribute("topics",getalltopics);
         return"/topic";
 
@@ -45,17 +51,26 @@ public class TopicController {
         model.addAttribute("user", user1);
         System.out.println("model = " + model + ", topicid = " + topicid + ", userid = " + userid);
         List<Topic> getalltopics = topicMapper.getalltopics();
-        model.addAttribute("topics",getalltopics);
-        Usertopics usertopics = usertopicMapper.getUsertopicsbysuperkey(topicid, userid);
-        model.addAttribute("utopic",usertopics);
+
+        Usertopics usertopics = usertopicMapper.getUsertopicsbysuperkey(topicid, userid);//if user is followr or not
+//        model.addAttribute("utopic",usertopics); try to convert color
+
         if(usertopics != null){
-            usertopicMapper.deltopictouser(usertopics.getUsertopicid());
+            usertopicMapper.deltopictouser(usertopics.getUsertopicid());//delete
         }else{
             usertopicMapper.insertnewtopictouser(topicid,userid);
             Topic topicById = topicMapper.getTopicById(topicid);
-            usertopicMapper.updateTopicnamebyTopicId(topicById.getTopicname(),topicid);
+            usertopicMapper.updateTopicnamebyTopicId(topicById.getTopicname(),topicid);//add
 
         }
+
+        for(int i = 0; i < getalltopics.size();i++){
+            int tid = getalltopics.get(i).getTopicid();
+            Usertopics usertopics1 = usertopicMapper.getUsertopicsbysuperkey(tid, userid);
+            getalltopics.get(i).setUsertopics(usertopics1);
+        }
+
+        model.addAttribute("topics",getalltopics);
 
         return"/topic";
 

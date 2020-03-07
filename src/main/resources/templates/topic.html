@@ -27,9 +27,7 @@
                         <p class="card-text"><b><span th:text="${itopic.topicname}">topic1</span></b></p>
                     </div>
                     <div>
-                    <button type="submit" th:class="${utopic}? 'btn btn-success' :'btn btn-danger'">Follow</button>
-                        <button type="submit"   th:class= "btn btn-danger">Unfollow</button>
-
+                    <button type="submit" th:class="${itopic.usertopics}? 'btn btn-danger' :'btn btn-success'" th:text="${itopic.usertopics}?'Unfollow':'Follow'">Follow</button>
                     </div>
                     </form>
                 </div>
