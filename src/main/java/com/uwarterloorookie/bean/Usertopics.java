@@ -3,6 +3,16 @@ package com.uwarterloorookie.bean;
 public class Usertopics {
     private int userid;
     private int id;
+    private int usertopicid;
+
+    public int getUsertopicid() {
+        return usertopicid;
+    }
+
+    public void setUsertopicid(int usertopicid) {
+        this.usertopicid = usertopicid;
+    }
+
     private String topictext;
     public String getTopictext() {
         return topictext;
