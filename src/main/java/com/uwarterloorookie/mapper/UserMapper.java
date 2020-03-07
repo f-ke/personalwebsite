@@ -1,11 +1,13 @@
 package com.uwarterloorookie.mapper;
 
 import com.uwarterloorookie.bean.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 public interface UserMapper {
-
+    @Insert("insert into users(userName, passWord) values(#{userName}, #{passWord})")
+    public void rigisterUser(String passWord, String userName);
     @Select("select * from users where passWord = #{passWord} and userName = #{userName} ")
     public User getUser(String passWord, String userName);
     @Select("SELECT * FROM users where id = #{id}")

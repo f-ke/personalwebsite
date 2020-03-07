@@ -32,7 +32,7 @@ public class LoginController {
 
         User user1 =  userMapper.getUser(passWord, userName);
         if(user1 != null){
-            List<Shipin> shipins=shiPinService.selectShipin();
+            List<Shipin> shipins=shiPinService.selectShipin(user1.getId());
             session.setAttribute("loginuser", userName);
             model.addAttribute("user",user1);
             model.addAttribute("Shipins",shipins);//use for test
@@ -54,7 +54,7 @@ public class LoginController {
    public String gethome(Model model,@PathVariable("id") int id){
        User user1 = userMapper.gerUserById(id);
        model.addAttribute("user", user1);
-       List<Shipin> shipins=shiPinService.selectShipin();
+       List<Shipin> shipins=shiPinService.selectShipin(id);
        model.addAttribute("Shipins",shipins);
        List<Usertopics> usertopicsList = usertopicMapper.SelecttopicsByuserid(id);
        model.addAttribute("mytopics",usertopicsList);

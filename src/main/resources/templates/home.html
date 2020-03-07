@@ -83,6 +83,7 @@
                             <button class="sc-ifAKCX cLNZRm" type="submit">share</button>
 
                             <select  class="sc-ifAKCX lmRuQB"  name ="topicid">
+                                <option th:value="${1}" th:text="meals"></option>
                                 <option th:value="${mytopic.id}" th:each="mytopic:${mytopics}" th:text="${mytopic.topictext}"  >1</option>
                             </select>
 

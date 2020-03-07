@@ -26,8 +26,8 @@ public class ShiPinService {
         return jieguo;
     }
     //查询
-    public List<Shipin> selectShipin(){
-        List<Shipin> shipins=shiPinDao.selectShipin();
+    public List<Shipin> selectShipin(int userid){
+        List<Shipin> shipins=shiPinDao.selectShipin(userid);
         return  shipins;
     }
 }

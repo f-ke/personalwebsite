@@ -15,9 +15,10 @@
 
 	<body class="text-center">
 		<form class="form-signin" th:action="@{/user/login}" method="post">
-			<img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<img class="mb-4" th:src="@{/asserts/img/our.svg}" alt="" width="72" height="72">
 			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
 			<p style="color: #ff2a39" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+			<p style="color:green" th:text="${msg2}" th:if="${not #strings.isEmpty(msg2)}"></p>
 			<label class="sr-only" th:text="#{login.username}">Username</label>
 			<input type="text"  name = "username" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
 			<label class="sr-only" th:text="#{login.password}">Password</label>
@@ -27,10 +28,11 @@
           <input type="checkbox" value="remember-me"/> [[#{login.rem}]]
         </label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
-			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}" style="background:grey">Sign in</button>
+			<p class="mt-5 mb-3 text-muted">© 2020-2021</p>
 			<a class="btn btn-sm" th:href="@{/(l='zh_CN')}">中文</a>
 			<a class="btn btn-sm"  th:href="@{/(l='en_US')}">English</a>
+			<a class="btn btn-sm" th:href="@{/toregister}" th:text="#{login.register}"></a>
 		</form>
 
 	</body>

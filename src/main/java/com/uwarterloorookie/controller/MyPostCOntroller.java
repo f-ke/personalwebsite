@@ -104,7 +104,7 @@ public class MyPostCOntroller {
         shiPinDao.updateuseridtByurl(userid,url);
 
         shiPinDao.updateusernametByuserid(username,userid);
-        List<Shipin> shipins=shiPinService.selectShipin();
+        List<Shipin> shipins=shiPinService.selectShipin(userid);
         model.addAttribute("Shipins", shipins);
         List<Usertopics> usertopicsList = usertopicMapper.SelecttopicsByuserid(userid);
 

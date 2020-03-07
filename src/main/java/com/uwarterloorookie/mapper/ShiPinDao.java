@@ -17,11 +17,13 @@ public interface ShiPinDao {
 
 
     //查询
-    @Select("select * from shipins order by id desc")
-    public List<Shipin> selectShipin();
+    @Select("select * from shipins where userid = #{userid} order by id desc ")
+    public List<Shipin> selectShipin(int userid);
 
     @Select("select * from shipins where id = #{id}")
     public Shipin getSipinbyid(@Param("id") int id);
+    @Select("select * from shipins order by view desc")
+    public List<Shipin> selectHotShipin();
 
     @Update("update shipins set view  = view + 1 where id = #{id}")
     public void updateviewbyid(@Param("id") int id);
