@@ -22,11 +22,11 @@ public class MyspringMVC {
                     registry.addViewController("/main.html").setViewName("/home");
                 }
 
-//                @Override
-//                public void addInterceptors(InterceptorRegistry registry) {
-//                    registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-//                       .excludePathPatterns("/","/user/login","/webjars/**","/asserts/**","/imagetest/**");
-//                }
+                @Override
+                public void addInterceptors(InterceptorRegistry registry) {
+                    registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                       .excludePathPatterns("/","/user/login","/toregister","/user/register","/webjars/**","/asserts/**","/imagetest/**");
+                }
 
                 @Override
                 public void addResourceHandlers(ResourceHandlerRegistry registry) {

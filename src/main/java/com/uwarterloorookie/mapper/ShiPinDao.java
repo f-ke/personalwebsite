@@ -24,7 +24,8 @@ public interface ShiPinDao {
     public Shipin getSipinbyid(@Param("id") int id);
     @Select("select * from shipins order by view desc")
     public List<Shipin> selectHotShipin();
-
+    @Select("select * from shipins where topicid = #{topicid} order by view desc")
+    public List<Shipin> selectHotShipinbytopic(int topicid);
     @Update("update shipins set view  = view + 1 where id = #{id}")
     public void updateviewbyid(@Param("id") int id);
     @Update("update shipins set topictext = #{text} where url = #{url}")
@@ -35,5 +36,6 @@ public interface ShiPinDao {
     public void updateusernametByuserid(String username, int userid);
     @Update("update shipins set commentnums = #{commentnums} where id = #{id}")
     public void updateCommentsById(int commentnums, int id);
+
 
 }
