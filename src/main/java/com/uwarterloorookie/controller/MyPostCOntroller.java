@@ -99,7 +99,7 @@ public class MyPostCOntroller {
         User user1 = userMapper.gerUserById(userid);
         String username = userMapper.getUsernameById(userid);
         model.addAttribute("user", user1);
-        String topic = usertopicMapper.Gettextbytopicid(topicid);
+        String topic = usertopicMapper.Gettextbytopicid(topicid,userid);
         shiPinDao.updatetextByurl(url,topic);
         shiPinDao.updateuseridtByurl(userid,url);
 

@@ -11,8 +11,8 @@ import java.util.List;
 public interface UsertopicMapper {
 @Select("select * from usertopics where userid = #{userid}")
   public List<Usertopics> SelecttopicsByuserid(int userid);
-@Select("select topictext from usertopics where id = #{topid}")
-  public String Gettextbytopicid(int topid);
+@Select("select topictext from usertopics where id = #{topid} and userid = #{userid}")
+  public String Gettextbytopicid(int topid, int userid);
 @Select("select * from usertopics where id = #{topicid} and userid = #{userid}")
   public Usertopics getUsertopicsbysuperkey(int topicid, int userid);
 @Insert("insert into usertopics(id, userid) values(#{topicid},#{userid})")
