@@ -26,6 +26,9 @@ public interface ShiPinDao {
     public List<Shipin> selectHotShipin();
     @Select("select * from shipins where topicid = #{topicid} order by view desc")
     public List<Shipin> selectHotShipinbytopic(int topicid);
+    @Select("SELECT * FROM Shipins INNER JOIN userfollowers ON shipins.`userid` = userfollowers.`followerid` WHERE userfollowers.`userid`=1" +
+            " ORDER BY shipins.`id` DESC")
+    public List<Shipin> selectfollowingShipinbyUserid(int userid);
     @Update("update shipins set view  = view + 1 where id = #{id}")
     public void updateviewbyid(@Param("id") int id);
     @Update("update shipins set topictext = #{text} where url = #{url}")

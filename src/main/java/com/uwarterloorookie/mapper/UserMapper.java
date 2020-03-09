@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface UserMapper {
     @Insert("insert into users(userName, passWord) values(#{userName}, #{passWord})")
     public void rigisterUser(String passWord, String userName);
@@ -12,6 +14,8 @@ public interface UserMapper {
     public User getUser(String passWord, String userName);
     @Select("SELECT * FROM users where id = #{id}")
     public User gerUserById(int id);
+    @Select("select * from users where id <> #{userid}")
+    public List<User> getanotherusers(int userid);
     @Select("SELECT userName FROM users where id = #{id}")
     public String getUsernameById(int id);
     @Update("update users set userName = #{userName} , passWord = #{passWord}, " +

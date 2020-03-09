@@ -12,6 +12,24 @@ public class User {
     private int birthyear;
     private int birthmonth;
     private int birthday;
+    private String userimage;
+    private  Userfollowers userfollowers;
+
+    public Userfollowers getUserfollowers() {
+        return userfollowers;
+    }
+
+    public void setUserfollowers(Userfollowers userfollowers) {
+        this.userfollowers = userfollowers;
+    }
+
+    public String getUserimage() {
+        return userimage;
+    }
+
+    public void setUserimage(String userimage) {
+        this.userimage = userimage;
+    }
 
     public int getBirthyear() {
         return birthyear;
