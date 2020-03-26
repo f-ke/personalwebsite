@@ -30,9 +30,9 @@
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}" style="background:grey">Sign in</button>
 			<p class="mt-5 mb-3 text-muted">© 2020-2021</p>
-			<a class="btn btn-sm" th:href="@{/(l='zh_CN')}">中文</a>
-			<a class="btn btn-sm"  th:href="@{/(l='en_US')}">English</a>
-			<a class="btn btn-sm" th:href="@{/toregister}" th:text="#{login.register}"></a>
+			<a class="btn btn-sm" name="chinese" th:href="@{/(l='zh_CN')}">中文</a>
+			<a class="btn btn-sm"  name="english"th:href="@{/(l='en_US')}">English</a>
+			<a class="btn btn-sm" name="new" th:href="@{/toregister}" th:text="#{login.register}"></a>
 		</form>
 
 	</body>
